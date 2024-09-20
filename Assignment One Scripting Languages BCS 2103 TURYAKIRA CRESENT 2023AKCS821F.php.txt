@@ -1,0 +1,34 @@
+<?php
+/*
+Assignment One Scripting Languages BCS 2103.
+Name: TURYAKIRA CRESENT. 
+Reg Number:2023/A/KCS/821/F.
+*/
+
+//Caputuring MyName
+$myName=readline("Enter Your Name: ");
+
+//Caputuring date of birth 
+$dateOfBirth=(readline("Enter Your date of birth(YYYY-MM-DD): "));
+
+//Enter home address
+$myHomeAddress=readline("Enter Your Home Address: ");
+
+/*Using try function for exception handling
+In case the user enters a wrong format of date of birth
+*/
+
+try{
+    //parse the birth date
+    $birthDtate=new DateTime($dateOfBirth);
+    //calculate age
+    $age=date('Y')- $birthDtate->format('Y');
+    
+
+//Displaying a welcome message
+print("Welcome $myName ! Back Home at $myHomeAddress and you are $age years today.");
+
+}catch(Exception $e){
+    echo "Error!:Invalid Date of Birth format: Please use YYYY-MM-DD Format";
+}
+?>
